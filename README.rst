@@ -11,7 +11,7 @@ Usage
 =====
 ::
 
-  $ ofxstatement convert -t skippaycz:SA vypis_20240505_20240531.csv vypis_20240505_20240531.ofx
+  $ ofxstatement convert -t skippaycz:CC MP_mesicni_platby_22082024.csv MP_mesicni_platby_22082024.ofx
 
 Configuration
 =============
