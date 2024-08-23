@@ -10,7 +10,7 @@ class SkippayczPlugin(Plugin):
     """
 
     def get_parser(self, filename):
-        SkippayczPlugin.encoding = self.settings.get('charset', 'utf-8')
+        SkippayczPlugin.encoding = self.settings.get('charset', 'utf-8-sig')
         f = open(filename, "r", encoding=SkippayczPlugin.encoding)
         parser = SkippayczParser(f)
         parser.statement.currency = self.settings.get('currency', 'CZK')
@@ -32,6 +32,7 @@ class SkippayczParser(CsvStatementParser):
     def split_records(self):
         """Return iterable object consisting of a line per transaction
         """
+
         # Field delimiter may be dependent on user settings in mobile App (English/Czech)
         return csv.reader(self.fin, delimiter=';', quotechar='"')
 
